@@ -1,0 +1,197 @@
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local window = library.CreateLib("Novaz#5792", "BloodTheme")
+local main = window:NewTab("Area 1")
+local main1 = window:NewTab("Area 2")
+local main2 = window:NewTab("Auto Buy")
+local section = main:NewSection("Auto Farm Area 1")
+local section1 = main1:NewSection("Auto Farm Area 2")
+local section2 = main2:NewSection("Auto Buy Upgrades")
+local plr = game.Players.LocalPlayer
+local hrp = plr.Character.HumanoidRootPart
+
+local part = Instance.new("Part", game.Workspace)
+part.Anchored = true
+part.Size = Vector3.new(5000,1,5000)
+part.CFrame = CFrame.new(383, 5, -71)
+part.Transparency = 1
+
+local pat = Instance.new("Part", game.Workspace)
+part.Anchored = true
+part.Size = Vector3.new(5,1,5)
+part.CFrame = CFrame.new(-8, 32, 83)
+part.Transparency = 1
+
+local pak = Instance.new("Part", game.Workspace)
+part.Anchored = true
+part.Size = Vector3.new(5,1,5)
+part.CFrame = CFrame.new(465, 21, -73)
+part.Transparency = 1
+
+section:NewToggle("Auto Farm 1", "", function(lft)
+lfv = lft
+while lfv do
+task.wait(1)
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetService("Workspace").ActiveSection.Area1.MoneyPoints.Point1, 0)
+wait()
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetService("Workspace").ActiveSection.Area1.MoneyPoints.Point1, 1)
+wait(.1)
+firesignal(game:GetService("Players").LocalPlayer.PlayerGui.Main.DefaultInfo.CashIn.MouseButton1Click)
+end
+end)
+
+section:NewToggle("Auto Farm 2", "", function(lfg)
+lfv = lfg
+while lfv do
+task.wait(.2)
+hrp.CFrame = CFrame.new(-8, 34, 83)
+wait(1)
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetService("Workspace").ActiveSection.Area1.MoneyPoints.Point2, 0)
+wait()
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetService("Workspace").ActiveSection.Area1.MoneyPoints.Point2, 1)
+wait(.1)
+firesignal(game:GetService("Players").LocalPlayer.PlayerGui.Main.DefaultInfo.CashIn.MouseButton1Click)
+end
+end)
+
+section:NewToggle("Auto Farm 3", "", function(lgk)
+lvm = lgk
+while lvm do
+task.wait(.2)
+hrp.CFrame = CFrame.new(-14, 67, 32)
+wait(1)
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetService("Workspace").ActiveSection.Area1.MoneyPoints.Point3, 0)
+wait()
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetService("Workspace").ActiveSection.Area1.MoneyPoints.Point3, 1)
+wait(.1)
+firesignal(game:GetService("Players").LocalPlayer.PlayerGui.Main.DefaultInfo.CashIn.MouseButton1Click)
+end
+end)
+
+section:NewToggle("Auto Farm 4", "", function(gkf)
+gkr = gkf
+while gkr do
+task.wait(.2)
+hrp.CFrame = CFrame.new(4, 48, -65)
+wait(1)
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetService("Workspace").ActiveSection.Area1.MoneyPoints.Point4, 0)
+wait()
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetService("Workspace").ActiveSection.Area1.MoneyPoints.Point4, 1)
+wait(.1)
+firesignal(game:GetService("Players").LocalPlayer.PlayerGui.Main.DefaultInfo.CashIn.MouseButton1Click)
+end
+end)
+
+section:NewToggle("Auto Return To Area 1", "", function(lfgdm)
+lfgfp = lfgdm
+while lfgfp do 
+task.wait(.1)
+if game:GetService("Workspace").ActiveSection:FindFirstChild("Area2") then
+hrp.CFrame = CFrame.new(393, 12, -82)
+elseif game:GetService("Workspace").ActiveSection:FindFirstChild("Hub") then
+hrp.CFrame = CFrame.new(-869, 143, 25)
+end
+end
+end)
+
+section1:NewToggle("Auto Farm 2/1", "", function(lpg)
+lpr = lpg
+while lpr do
+task.wait(.2)
+hrp.CFrame = CFrame.new(465, 23, -73)
+wait(1)
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetService("Workspace").ActiveSection.Area2.MoneyPoints.Point5, 0)
+wait()
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetService("Workspace").ActiveSection.Area2.MoneyPoints.Point5, 1)
+wait(.1)
+firesignal(game:GetService("Players").LocalPlayer.PlayerGui.Main.DefaultInfo.CashIn.MouseButton1Click)
+end
+end)
+
+section1:NewToggle("Auto Farm 2/2", "", function(mfk)
+lgm = mfk
+while lgm do
+task.wait(.2)
+hrp.CFrame = CFrame.new(565, 24, -73)
+wait(1)
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetService("Workspace").ActiveSection.Area2.MoneyPoints.Point6, 0)
+wait()
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetService("Workspace").ActiveSection.Area2.MoneyPoints.Point6, 1)
+wait(.1)
+firesignal(game:GetService("Players").LocalPlayer.PlayerGui.Main.DefaultInfo.CashIn.MouseButton1Click)
+end
+end)
+
+
+section1:NewToggle("Auto Farm 2/3", "", function(ogp)
+lgp = ogp
+while lgp do
+task.wait(.2)
+hrp.CFrame = CFrame.new(game:GetService("Workspace").ActiveSection.Area2.Point3.Preset.UpDown.Position + Vector3.new(0, 5,0))
+wait(1)
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetService("Workspace").ActiveSection.Area2.MoneyPoints.Point7, 0)
+wait()
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetService("Workspace").ActiveSection.Area2.MoneyPoints.Point7, 1)
+wait(.1)
+firesignal(game:GetService("Players").LocalPlayer.PlayerGui.Main.DefaultInfo.CashIn.MouseButton1Click)
+end
+end)
+
+section1:NewToggle("Auto Farm 2/4", "", function(ogp)
+lgp = ogp
+while lgp do
+task.wait(.2)
+hrp.CFrame = CFrame.new(521, 31, -182)
+wait(1)
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetService("Workspace").ActiveSection.Area2.MoneyPoints.Point8, 0)
+wait()
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetService("Workspace").ActiveSection.Area2.MoneyPoints.Point8, 1)
+wait(.1)
+firesignal(game:GetService("Players").LocalPlayer.PlayerGui.Main.DefaultInfo.CashIn.MouseButton1Click)
+end
+end)
+
+section1:NewToggle("Auto Farm 2/5", "", function(ogp)
+lgp = ogp
+while lgp do
+task.wait(.2)
+hrp.CFrame = CFrame.new(384, 139, 31)
+wait(1)
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetService("Workspace").ActiveSection.Area2.MoneyPoints.Point9, 0)
+wait()
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetService("Workspace").ActiveSection.Area2.MoneyPoints.Point9, 1)
+wait(.1)
+firesignal(game:GetService("Players").LocalPlayer.PlayerGui.Main.DefaultInfo.CashIn.MouseButton1Click)
+end
+end)
+
+section1:NewToggle("Auto Return To Area 2", "", function(lgdm)
+lgfp = lgdm
+while lgfp do 
+task.wait(.1)
+if game:GetService("Workspace").ActiveSection:FindFirstChild("Area1") then
+hrp.CFrame = CFrame.new(18, 10, -31)
+elseif game:GetService("Workspace").ActiveSection:FindFirstChild("Hub") then
+hrp.CFrame = CFrame.new(-842, 145, -1)
+end
+end
+end)
+
+section2:NewToggle("Loop Upgrade", "", function(lpl)
+lll = lpl
+while lll do
+task.wait(.1)
+if lpm == "PP" then
+game:GetService("ReplicatedStorage").Remotes.BuyUpgrade:FireServer("PrestigeUpgrade1")
+elseif lpm == "Crystal" then
+game:GetService("ReplicatedStorage").Remotes.BuyUpgrade:FireServer("UpgradeCrystal1")
+elseif lpm == "Crystal Money" then
+game:GetService("ReplicatedStorage").Remotes.BuyUpgrade:FireServer("CrystalMoneyUpgrade1")
+else
+game:GetService("ReplicatedStorage").Remotes.BuyUpgrade:FireServer("UpgradeMoney"..lpm)
+end
+end
+end)
+
+section2:NewDropdown("Select Upgrade", "", {"1", "2", "3", "4", "PP", "Crystal", "Crystal Money"}, function(lpg)
+lpm = lpg
+end)
